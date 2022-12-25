@@ -37,16 +37,15 @@
   (completion-styles '(flex substring partial-completion)))
 
 ;; Some common sense settings
-
-(load-theme 'leuven t)
 (fset 'yes-or-no-p 'y-or-n-p)
+
 (recentf-mode 1)
 (setq recentf-max-saved-items 100
       inhibit-startup-message t
       ring-bell-function 'ignore)
 
 (tool-bar-mode 0)
-(menu-bar-mode 0)
+;;(menu-bar-mode 0)
 (when (fboundp 'scroll-bar-mode)
   (scroll-bar-mode 0))
 
@@ -59,5 +58,19 @@
   (set-face-attribute 'default nil :font "Consolas-11"))
  ((member "DejaVu Sans Mono" (font-family-list))
   (set-face-attribute 'default nil :font "DejaVu Sans Mono-10")))
+
+(load-theme 'solarized-selenized-dark t)
+;; make the modeline high contrast
+(setq solarized-high-contrast-mode-line t)
+;; make the fringe stand out from the background
+(setq solarized-distinct-fringe-background t)
+
+;; Backups
+(setq backup-directory-alist `(("." . "~/.saves")))
+(setq backup-by-copying t)
+(setq delete-old-versions t
+kept-new-versions 6
+kept-old-versions 2
+version-control t)
 
 (load-file (expand-file-name "init.el" user-emacs-directory))
