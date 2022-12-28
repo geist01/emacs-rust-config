@@ -59,18 +59,27 @@
  ((member "DejaVu Sans Mono" (font-family-list))
   (set-face-attribute 'default nil :font "DejaVu Sans Mono-10")))
 
-(load-theme 'solarized-selenized-dark t)
+(load-theme 'solarized-dark-high-contrast t)
 ;; make the modeline high contrast
-(setq solarized-high-contrast-mode-line t)
+;;(setq solarized-high-contrast-mode-line t)
 ;; make the fringe stand out from the background
-(setq solarized-distinct-fringe-background t)
+;;(setq solarized-distinct-fringe-background t)
 
 ;; Backups
 (setq backup-directory-alist `(("." . "~/.saves")))
 (setq backup-by-copying t)
 (setq delete-old-versions t
-kept-new-versions 6
-kept-old-versions 2
-version-control t)
+      kept-new-versions 6
+      kept-old-versions 2
+      version-control t)
+
+;; use IDO for buffer switching
+(require 'ido)
+(ido-mode 1)
+(setq ido-everywhere t)
+(setq ido-enable-flex-matching t)
+
+;; treat snakecase as one word with M-f, M-b
+(global-superword-mode t)
 
 (load-file (expand-file-name "init.el" user-emacs-directory))
