@@ -36,7 +36,7 @@
   ;; no longer be necessary.
   (when buffer-file-name
     (setq-local buffer-save-without-query t))
-  (add-hook 'before-save-hook 'lsp-format-buffer nil t))
+  );; (add-hook 'before-save-hook 'lsp-format-buffer nil t))
 
 ;; -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 ;; for rust-analyzer integration
