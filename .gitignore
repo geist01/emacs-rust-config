@@ -6,3 +6,6 @@ custom.el
 ido.last
 /.dap-breakpoints
 /.extension/
+filesets-cache.el
+places
+transient
